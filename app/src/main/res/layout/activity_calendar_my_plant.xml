@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+    <import type="android.view.View"/>
+
+    <variable
+        name="calendarMyPlantViewModel"
+        type="vn.edu.ptit.planta.ui.calendarmyplant.CalendarMyPlantViewModel" />
+  </data>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:orientation="vertical"
+      android:layout_height="match_parent"
+      android:background="@color/colorBackground"
+      tools:context=".ui.calendarmyplant.CalendarMyPlantActivity">
+
+    <LinearLayout
+        android:paddingTop="@dimen/top_end_to_end"
+        android:background="@color/colorPrimary"
+        android:id="@+id/layout_add_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+      <ImageView
+          android:onClick="@{() -> calendarMyPlantViewModel.onBackClick()}"
+          style="@style/Widget.AppCompat.ActionButton"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@drawable/ic_backspace"
+          app:tint="@color/white" />
+
+      <TextView
+          android:id="@+id/calendar_text_view"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:paddingBottom="2dp"
+          android:paddingLeft="10dp"
+          android:textColor="@color/white"
+          android:fontFamily="@font/tiktok_bold"
+          android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="wrap_content"
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent">
+
+      <com.shrikanthravi.collapsiblecalendarview.widget.CollapsibleCalendar
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:primaryColor="@color/colorPrimary"
+          app:textColor="@android:color/white"
+          app:selectedItem_textColor="@color/colorPrimary"
+          android:id="@+id/collapsibleCalendarView"
+          app:todayItem_textColor="@android:color/white"
+          app:todayItem_background="@drawable/circle_white_stroke_background"
+          app:selectedItem_background="@drawable/circle_white_solid_background"
+          app:buttonLeft_drawableTintColor="@android:color/white"
+          app:buttonRight_drawableTintColor="@android:color/white"
+          app:expandIconColor="@android:color/white"
+          app:eventColor="@android:color/white"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:padding="16dp"
+          android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rcv_calendar_my_plant"/>
+
+      </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+  </LinearLayout>
+</layout>

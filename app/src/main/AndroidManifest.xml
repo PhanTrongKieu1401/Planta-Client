@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/icon_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/icon_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Planta"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".ui.plant.plantdetail.plantimage.PlantImageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.plant.plantdetail.PlantDetailActivity"
+            android:exported="false"
+            android:label="@string/title_activity_plant_detail"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Planta" />
+        <activity
+            android:name=".ui.test.TestActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.schedule.notification.AddNotificationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.schedule.ScheduleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.calendarmyplant.CalendarMyPlantActivity"
+            android:exported="false"
+            android:label="@string/title_activity_calendar_my_plant"
+            android:theme="@style/Theme.Planta" />
+        <activity
+            android:name=".ui.myplant.myplantdetail.MyPlantDetailActivity"
+            android:exported="false"
+            android:label="@string/title_activity_my_plant_detail"
+            android:theme="@style/Theme.Planta" />
+        <activity
+            android:name=".ui.myplant.search.SearchMyPlantActivity"
+            android:exported="false"
+            android:label="@string/title_activity_search_my_plant"
+            android:theme="@style/Theme.Planta" />
+        <activity
+            android:name=".ui.guesthome.GuestHomeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.register.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.plant.chooseplant.ChoosePlantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.myplant.addmyplant.AddMyPlantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.myplant.editmyplant.EditMyPlantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.user.UserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.user.profile.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".ui.home.today.ScheduleNotificationReceiver"
+            android:enabled="true"
+            android:exported="false" />
+    </application>
+
+</manifest>

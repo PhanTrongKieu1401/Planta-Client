@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="homeViewModel"
+            type="vn.edu.ptit.planta.ui.home.HomeViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.HomeFragment"
+        android:background="@color/white">
+        <androidx.core.widget.NestedScrollView
+            android:paddingTop="@dimen/top_end_to_end"
+            android:paddingBottom="20dp"
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/colorGreen"
+            android:contentDescription="@string/add_planta"
+            android:src="@drawable/ic_plus"
+            app:shapeAppearanceOverlay="@style/MyShapeAppearanceOverlay"
+            app:tint="@color/white" />
+
+    </RelativeLayout>
+</layout>

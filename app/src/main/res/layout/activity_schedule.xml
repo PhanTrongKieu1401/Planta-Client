@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="scheduleViewModel"
+            type="vn.edu.ptit.planta.ui.schedule.ScheduleViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.schedule.ScheduleActivity"
+        android:background="@drawable/bg_mobile"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/id_add_garden_relayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:visibility="@{scheduleViewModel.isCheckBlack? View.GONE: View.VISIBLE}"
+                android:onClick="@{() -> scheduleViewModel.onBlackClick()}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="16dp"
+                android:text="Bỏ qua"
+                android:textSize="@dimen/text_size_h8"
+                android:fontFamily="@font/tiktok_medium"
+                android:textColor="@color/colorGreenText"
+                app:backgroundTint="@color/colorblackText"/>
+            <RelativeLayout
+                android:layout_marginTop="40dp"
+                android:id="@+id/id_garden_relayout_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/circle_img_myplanta"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/MyShapeAppearanceOverlay"
+                    app:srcCompat="@drawable/plant_img" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@id/circle_img_myplanta"
+                    android:layout_alignBottom="@id/circle_img_myplanta"
+                    android:layout_marginEnd="-6dp"
+                    android:padding="10dp"
+                    android:background="@drawable/rounded_icon_outline"
+                    android:src="@drawable/ic_notification"
+                    app:tint="@color/red"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_below="@id/id_add_garden_relayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="20dp">
+
+
+            <RelativeLayout
+                android:id="@+id/id_layout_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginLeft="4dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/tiktok_bold"
+                    android:text="Nhắc nhở"
+                    android:textColor="@color/colorGreenText"
+                    android:textSize="15sp"
+                    android:layout_centerVertical="true" />
+
+                <ImageView
+                    android:onClick="@{() -> scheduleViewModel.onAddNotificationClick()}"
+                    android:padding="10dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_plus"
+                    android:background="@drawable/rounded_icon"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_above="@+id/id_layout_5"
+                android:layout_below="@+id/id_layout_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Your speakable text for NestedScrollView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcv_schedule"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <RelativeLayout
+                android:id="@+id/id_layout_5"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp">
+                <Button
+                    android:onClick="@{() -> scheduleViewModel.handleSubmit()}"
+                    android:alpha="@{scheduleViewModel.isCheckBlack? 1.0f : 0.8f}"
+                    android:enabled="@{scheduleViewModel.isCheckBlack}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/tiktok_medium"
+                    android:background="@drawable/custom_button_2"
+                    android:text="@{scheduleViewModel.busy ? `` : `Hoàn thành`}"/>
+
+                    <ProgressBar
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+                        android:indeterminateTint="@color/white"
+                        android:visibility="@{scheduleViewModel.busy? View.VISIBLE : View.GONE}" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

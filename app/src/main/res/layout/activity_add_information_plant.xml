@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Additional information"
+                    android:gravity="end"
+                    android:textColor="@color/colorGreenBanana"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/tiktok_bold"></TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingLeft="30dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="30dp"
+                        android:paddingBottom="75dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_name"
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="0dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:layout_marginTop="5dp"
+                            android:foreground="?android:attr/selectableItemBackground">
+
+                            <LinearLayout
+                                android:id="@+id/layout_expand_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:background="@drawable/rounder_background"
+                                android:gravity="center_vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="10">
+
+                                    <LinearLayout
+                                        android:id="@+id/layout_title_name_myplanta"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="20dp">
+
+                                        <TextView
+                                            android:id="@+id/tv_title_name_myplanta"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="14sp"
+                                            android:textColor="@color/black"
+                                            android:fontFamily="@font/tiktok_bold"
+                                            android:paddingVertical="10dp"
+                                            android:text="Tên thực vật"
+                                            android:maxLines="1"
+                                            android:ellipsize="end"/>
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layout_content_name_myplanta"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/layout_title_name_myplanta"
+                                android:layout_marginTop="40dp"
+                                android:layout_marginHorizontal="20dp"
+                                android:paddingBottom="10dp">
+
+                                <EditText
+                                    android:id="@+id/et_content_name_myplanta"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Nhập tên thực vật"
+                                    android:paddingVertical="10dp"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp"
+                                    android:background="@android:color/transparent"/>
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_growndate"
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="0dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:layout_marginTop="5dp"
+                            android:foreground="?android:attr/selectableItemBackground">
+
+                            <LinearLayout
+                                android:id="@+id/layout_expand_growndate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:background="@drawable/rounder_background"
+                                android:gravity="center_vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="10">
+
+                                    <LinearLayout
+                                        android:id="@+id/layout_title_growndate_myplanta"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="20dp">
+
+                                        <TextView
+                                            android:id="@+id/tv_title_growndate_myplanta"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="14sp"
+                                            android:textColor="@color/black"
+                                            android:fontFamily="@font/tiktok_bold"
+                                            android:text="Ngày trồng"
+                                            android:paddingVertical="10dp"
+                                            android:maxLines="1"
+                                            android:ellipsize="end"/>
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+
+                                <ImageView
+                                    android:id="@+id/iv_choose_date"
+                                    style="@style/Widget.AppCompat.ActionButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginRight="6dp"
+                                    android:src="@drawable/ic_calendar"
+                                    android:padding="10dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layout_content_growndate_myplanta"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/layout_title_growndate_myplanta"
+                                android:layout_marginTop="40dp"
+                                android:layout_marginHorizontal="20dp"
+                                android:paddingBottom="10dp">
+
+                                <EditText
+                                    android:id="@+id/et_content_growndate_myplanta"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Nhập ngày trồng"
+                                    android:paddingVertical="10dp"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp"
+                                    android:background="@android:color/transparent"
+                                    android:focusable="false"
+                                    android:clickable="true"/>
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_kindoflight"
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="0dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:layout_marginTop="5dp"
+                            android:foreground="?android:attr/selectableItemBackground">
+
+                            <LinearLayout
+                                android:id="@+id/layout_expand_kindoflight"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:background="@drawable/rounder_background"
+                                android:gravity="center_vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="10">
+
+                                    <LinearLayout
+                                        android:id="@+id/layout_title_kindoflight_myplanta"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="20dp">
+
+                                        <TextView
+                                            android:id="@+id/tv_title_kindoflight_myplanta"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="14sp"
+                                            android:textColor="@color/black"
+                                            android:fontFamily="@font/tiktok_bold"
+                                            android:paddingVertical="10dp"
+                                            android:text="Loại ánh sáng"
+                                            android:maxLines="1"
+                                            android:ellipsize="end"/>
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layout_content_kindoflight_myplanta"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_below="@+id/layout_title_kindoflight_myplanta"
+                                android:layout_marginTop="40dp"
+                                android:layout_marginHorizontal="20dp"
+                                android:paddingBottom="10dp">
+
+                                <EditText
+                                    android:id="@+id/et_content_kindoflight_myplanta"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Nhập loại ánh sáng"
+                                    android:paddingVertical="10dp"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp"
+                                    android:background="@android:color/transparent"/>
+
+<!--                                <RadioGroup-->
+<!--                                    android:id="@+id/rg_kind_of_light"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:orientation="vertical">-->
+<!--                                    <RadioButton android:id="@+id/rb_white"-->
+<!--                                        android:layout_width="wrap_content"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:text="Trắng"/>-->
+<!--                                    <RadioButton android:id="@+id/rb_red"-->
+<!--                                        android:layout_width="wrap_content"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:text="Đỏ"/>-->
+<!--                                    <RadioButton android:id="@+id/rb_yellow"-->
+<!--                                        android:layout_width="wrap_content"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:text="Vàng"/>-->
+<!--                                    <RadioButton android:id="@+id/rb_violet"-->
+<!--                                        android:layout_width="wrap_content"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:text="Tím"/>-->
+<!--                                </RadioGroup>-->
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="0dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:background="@drawable/rounder_background"
+                                android:gravity="center_vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="10">
+
+                                        <LinearLayout
+                                            android:id="@+id/layout_image_myplanta"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="20dp">
+
+                                            <TextView
+                                                android:id="@+id/tv_title_image_myplanta"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textSize="14sp"
+                                                android:textColor="@color/black"
+                                                android:fontFamily="@font/tiktok_bold"
+                                                android:paddingVertical="10dp"
+                                                android:text="Ảnh thực vật"
+                                                android:maxLines="1"
+                                                android:ellipsize="end"/>
+
+                                        </LinearLayout>
+
+                                    </RelativeLayout>
+
+                                    <ImageView
+                                        android:id="@+id/iv_choose_image"
+                                        style="@style/Widget.AppCompat.ActionButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="6dp"
+                                        android:src="@drawable/ic_image"
+                                        android:padding="10dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true"/>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center">
+
+                                    <ImageView
+                                        android:id="@+id/iv_image_myplanta"
+                                        android:layout_width="300dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginVertical="10dp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/icon_no_image"></ImageView>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="20dp">
+                            <Button
+                                android:id="@+id/btn_save"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:text="Save"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/tiktok_medium"
+                                android:background="@drawable/background_button_accept"
+                                android:backgroundTint="@color/colorBtnAccept"/>
+
+                            <ProgressBar
+                                android:id="@+id/progressBar"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_centerInParent="true"
+                                android:visibility="gone"
+                                android:indeterminateTint="@color/white"/>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

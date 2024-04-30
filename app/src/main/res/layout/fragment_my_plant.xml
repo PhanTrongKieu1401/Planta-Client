@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="myPlantViewModel"
+            type="vn.edu.ptit.planta.ui.myplant.MyPlantViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.myplant.MyPlantFragment"
+        android:background="@color/colorBackground">
+
+        <!--   Chưa có dữ liệu     -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:visibility="@{myPlantViewModel.isData == null || myPlantViewModel.isData? View.GONE : View.VISIBLE}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/ic_prof_bloom" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bạn chưa có cây trồng nào!"
+                    android:fontFamily="@font/tiktok_medium"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!--   Có dữ liệu     -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="20dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingTop="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingBottom="60dp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:visibility="@{myPlantViewModel.isData? View.VISIBLE : View.GONE}"
+                            android:id="@+id/id_rcv_myplant"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <androidx.cardview.widget.CardView
+                android:onClick="@{() -> myPlantViewModel.onSearchMyPlant()}"
+                android:layout_marginBottom="20dp"
+                android:layout_width="98dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/white"
+                android:foreground="?android:attr/selectableItemBackground">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:paddingTop="2dp"
+                        android:src="@drawable/ic_search"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:text="Tìm kiếm"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp"
+                        android:layout_gravity="center_vertical" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="@{myPlantViewModel.isData == null ? View.VISIBLE : View.GONE}" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorWhite">#fcfcff</color>
+    <color name="colorPrimary">#5cb38a</color>
+    <color name="colorSecondPrimary">#2c6455</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#01a4db</color>
+
+    <color name="colorGrey">#80161823</color>
+    <color name="colorGreen">#0BE09B</color>
+    <color name="colorGreenBanana">#5BD459</color>
+    <color name="colorGreenText">#2c6455</color>
+    <color name="colorblackText">#e5f3f1</color>
+
+    <color name="colorSecond">#cecece</color>
+    <color name="colorBackground">#E2F4F1</color>
+    <!--    #01A4DB-->
+    <color name="nav_selected">#5cb38a</color>
+    <color name="nav_unselected">#767678</color>
+
+    <color name="blue">#03A9F4</color>
+    <color name="red">#FE2C55</color>
+    <color name="divider">#EEEEEE</color>
+    <color name="background">#f3f3f3</color>
+    <color name="black_trans">#33000000</color>
+
+    <color name="colorLinkRegister">#005E93</color>
+    <color name="colorLinkForget">#6AB0B5</color>
+    <color name="colorBtnAccept">#44BB26</color>
+    <color name="colorBtnCancel">#AE1728</color>
+</resources>
