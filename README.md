@@ -2,7 +2,7 @@
 ## Introduction
 - Planta application on mobile devices to help users easily manage and care for plants.
 - Functions is developed:
-  - Client: Login/register, search plant, manage information plant.
+  - Client: Manage information user, search plant, manage information plant, manage schedule, manage note, schedule reminders for users.
 ## Video demo 
 - Demo some functions: manage information ([Watch the demo](https://drive.google.com/file/d/1a_1GBlKsZfzqKzZYhDprwbVssqUPlE2b/view?usp=drive_link))
 ## Dependencies
